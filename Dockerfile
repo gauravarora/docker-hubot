@@ -1,10 +1,9 @@
-FROM node:0.12-slim
-MAINTAINER Maurice Kaag <mkaag@me.com>
+FROM node:8-slim
 
 # -----------------------------------------------------------------------------
 # Environment variables
 # -----------------------------------------------------------------------------
-ENV HUBOT_NAME hubot
+ENV HUBOT_NAME shaktimaan
 ENV HUBOT_SLACK_TOKEN false
 ENV HUBOT_AUTH_ADMIN myself
 ENV GITLAB_CHANNEL general
@@ -24,7 +23,7 @@ WORKDIR /opt
 # -----------------------------------------------------------------------------
 # Install
 # -----------------------------------------------------------------------------
-RUN npm install --production; npm cache clean
+RUN npm install --production; npm cache clean --force
 
 # -----------------------------------------------------------------------------
 # Post-install
